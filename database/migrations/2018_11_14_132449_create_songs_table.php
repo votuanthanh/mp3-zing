@@ -22,7 +22,6 @@ class CreateSongsTable extends Migration
             $table->integer('year');
             $table->string('genre');
             $table->integer('composer_id')->index();
-            $table->integer('singer_id')->index();
             $table->integer('user_id')->index();
             $table->timestamps();
         });
