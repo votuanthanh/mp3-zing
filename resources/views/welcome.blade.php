@@ -81,16 +81,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Music Mp3
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://laracasts.com">Listening</a>
+                    <a href="https://laravel-news.com">Singers</a>
+                    <a href="https://nova.laravel.com">Composers</a>
+                    <a href="https://forge.laravel.com">Songs</a>
+                    <a href="https://github.com/laravel/laravel">Playlists</a>
                 </div>
             </div>
         </div>

@@ -25,6 +25,16 @@ Route::prefix('user')->group(function () {
 });
 
 Auth::routes();
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/singer/create', 'SingerController@create')->name('singer.create');
+Route::post('/singer/store', 'SingerController@store')->name('singer.store');
+
+Route::get('/composer/create', 'ComposerController@create')->name('composer.create');
+Route::post('/composer/store', 'ComposerController@store')->name('composer.store');
+
+Route::get('/song/create', 'SongController@create')->name('song.create');
+Route::post('/song/store', 'SongController@store')->name('song.store');
+
+Route::get('/listening', 'ListeningController@index')->name('listening.index');
