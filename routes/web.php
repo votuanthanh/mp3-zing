@@ -34,7 +34,15 @@ Route::post('/singer/store', 'SingerController@store')->name('singer.store');
 Route::get('/composer/create', 'ComposerController@create')->name('composer.create');
 Route::post('/composer/store', 'ComposerController@store')->name('composer.store');
 
+Route::get('/song/index', 'SongController@index')->name('song.index');
 Route::get('/song/create', 'SongController@create')->name('song.create');
 Route::post('/song/store', 'SongController@store')->name('song.store');
+
+
+
+Route::get('/playlist/index', 'PlaylistController@index')->name('playlist.index');
+Route::get('/playlist/create', 'PlaylistController@create')->name('playlist.create');
+Route::post('/playlist/store', 'PlaylistController@store')->name('playlist.store');
+
 
 Route::get('/listening', 'ListeningController@index')->name('listening.index');

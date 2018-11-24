@@ -14,4 +14,8 @@ class Song extends Model
         'year',
         'genre',
     ];
+
+    public function composer () {
+    	return $this->belongsTo('\App\Composer' , 'composer_id', 'id');
+    }
 }

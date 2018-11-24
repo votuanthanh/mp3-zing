@@ -28,5 +28,7 @@ class SingerController extends Controller
         } catch (Exception $e) {
 
         }
+
+        return redirect()->route('singer.create')->with('message', 'Done');
     }
 }

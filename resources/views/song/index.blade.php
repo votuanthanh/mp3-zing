@@ -14,21 +14,31 @@
 					<div class="card-header"></div>
 					<div class="card-body">
 						<div class="d-flex flex-row-reverse">
-							<a href="{{ route('playlist.create') }}" class="btn btn-primary py-1 my-2">Create PLaylist</a>
+							<a href="{{ route('song.create') }}" class="btn btn-primary py-1 my-2">Create Song</a>
 						</div>
 						<table class="table">
 							<thead class="thead-dark">
 								<tr>
 									<th>#</th>
+									<th>Cover Image</th>
 									<th>Name</th>
+									<th>Author</th>
+									<th>Year</th>
+									<th>FIle</th>
+									<th>Created At</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								 @foreach ($playlists as $playlist)
+								@foreach ($songs as $song)
 								<tr>
-									<td>{{ $playlist->id }}</td>
-									<td>{{ $playlist->name }}</td>
+									<td>{{ $song->id }}</td>
+									<td><img class="img-thumbnail" src="{{ asset('/img' . $song->{'cover_image'}) }}"></td>
+									<td>{{ $song->name }}</td>
+									<td>{{ $song->composer->name }}</td>
+									<td>{{ $song->year }}</td>
+									<td>{{ $song->file_name }}</td>
+									<td>{{ $song->description }}</td>
 									<td class="d-flex">
 										<a href="#" class="btn btn-primary mr-1">View</a>
 										<a href="#" class="btn btn-success mr-1">Edit</a>
@@ -38,6 +48,7 @@
 								@endforeach
 							</tbody>
 						</table>
+
 					</div>
 				</div>
 			</div>

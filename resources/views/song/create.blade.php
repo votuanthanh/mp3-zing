@@ -6,13 +6,17 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Create a song</div>
+                
+                @if(Session::has('message'))
+                    <div class="alert alert-success"> {{ Session::get('message') }}</div>
+                @endif
 
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data" action="{{ route('song.store') }}">
                        @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-sm-4 col-form-label text-md-right">NAME</label>
+                            <label for="name" class="col-sm-4 col-form-label text-md-right">Name</label>
                             <div class="col-md-6">
                                 <input 
                                     id="name" 

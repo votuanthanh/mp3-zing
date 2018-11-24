@@ -10,6 +10,10 @@
             <div class="card">
                 <div class="card-header">Create composer</div>
 
+                @if(Session::has('message'))
+                    <div class="alert alert-success"> {{ Session::get('message') }}</div>
+                @endif
+
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data" action="{{ route('composer.store') }}">
                         @csrf

@@ -27,5 +27,8 @@ class ComposerController extends Controller
         } catch (Exception $e) {
 
         }
+
+        return redirect()->route('composer.create')->with('message', 'Done');
+
     }
 }
