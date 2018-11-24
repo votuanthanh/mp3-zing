@@ -12,6 +12,15 @@
                 @endif
 
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form method="POST" enctype="multipart/form-data" action="{{ route('song.store') }}">
                        @csrf
 
@@ -28,7 +37,7 @@
                                  @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>
-                                            {{ $errors->first('<name></name>') }}
+                                            {{ $errors->first('name') }}
                                         </strong>
                                     </span>
                                 @endif
@@ -60,6 +69,13 @@
                             <div class="col-md-6">
                                 <input id="file_name" type="file" class="custom-file-input" name="file_name">
                                 <label class="custom-file-label" for="file_name">Choose file</label>
+                                @if ($errors->has('file_name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>
+                                            {{ $errors->first('file_name') }}
+                                        </strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -93,6 +109,13 @@
                             <div class="col-md-6">
                                 <input id="cover_image" type="file" class="custom-file-input" name="cover_image">
                                 <label class="custom-file-label" for="cover_image">Choose file</label>
+                                @if ($errors->has('cover_image'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>
+                                            {{ $errors->first('cover_image') }}
+                                        </strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
