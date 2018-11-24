@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Song;
 use App\Composer;
 use Auth;
+use App\Http\Requests\CreateSongRequest;
 
 class SongController extends Controller
 {
@@ -26,7 +27,7 @@ class SongController extends Controller
         return view('song.create', ['composers' => $composers]);
     }
 
-    public function store(Request $request)
+    public function store(CreateSongRequest $request)
     {
         $song = new Song($request->all());
         $composer = Composer::find($request->composer_id);
