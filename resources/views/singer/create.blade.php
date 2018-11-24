@@ -9,6 +9,10 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Create singer</div>
+                
+                @if(Session::has('message'))
+                    <div class="alert alert-success"> {{ Session::get('message') }}</div>
+                @endif
 
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data" action="{{ route('singer.store') }}">

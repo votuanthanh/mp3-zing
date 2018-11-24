@@ -9,6 +9,16 @@ use Auth;
 
 class SongController extends Controller
 {
+   
+    public function index()
+    {
+        $songs = Song::with('composer')
+            ->orderBy('created_at', 'ASC')
+            ->paginate(10);
+        
+        return view('song.index',['songs' => $songs]);
+    }
+
     public function create()
     {   
         //lay du lieu tu composer qua song
@@ -44,5 +54,7 @@ class SongController extends Controller
 
         //$compser->Songs()->save($song);
         $composer->songs()->save($song);
+
+        return redirect()->route('song.create')->with('message', 'Done');
     }
 }
