@@ -8,6 +8,13 @@ use App\Http\Requests\CreateSingerRequest;
 
 class SingerController extends Controller
 {
+    
+    public function index() {
+        $singers = Singer::all();
+        return view('singer.index',['singers' => $singers]);
+
+    }
+
     public function create()
     {
         return view('singer.create');
