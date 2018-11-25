@@ -17,6 +17,15 @@ class PlaylistController extends Controller
         return view('playlist.index',['playlists' => $playlists]);
     }
 
+    public function showSongPlayList()
+    {
+        $songs = Song::has('playlist_id')
+            ->where('created_at', 'ASC')
+            ->paginate(10);
+        
+        return view('playlist.showsong',['songs' => $songs]);
+    }
+
     public function create()
     {
 

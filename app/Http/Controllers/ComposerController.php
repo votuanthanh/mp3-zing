@@ -8,6 +8,14 @@ use App\Http\Requests\CreateComposerRequest;
 
 class ComposerController extends Controller
 {
+    
+    public function index() {
+        $composers = Composer::all();
+        return view('composer.index',['composers' => $composers]);
+
+    }
+
+
     public function create(Request $request)
     {
         return view('composer.create');

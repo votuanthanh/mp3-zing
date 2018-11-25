@@ -27,20 +27,17 @@
                     {{ config('', 'Music Mp3') }}
                 </a>
                 <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Listening<span class="sr-only">(current)</span></a>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ URL::to('singer/index') }}">Singers</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Singers</a>
+                    <a class="nav-link" href="{{ URL::to('composer/index') }}">Composers</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Composers</a>
+                    <a class="nav-link" href="{{ URL::to('song/index') }}">Songs</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Songs</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Playlists</a>
+                    <a class="nav-link" href="{{ URL::to('playlist/index') }}">Playlists</a>
                   </li>
                 </ul>                              
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
