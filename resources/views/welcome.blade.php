@@ -413,7 +413,7 @@
     </div>
     <div id="player">
         <audio controls autoplay hidden>
-         <source src="{{URL::asset('uploads/music.mp3')}}" type="audio/mpeg">
+         <source src="{{URL::asset('mp3/5bfce6c34dbef.mp3')}}" type="audio/mpeg">
                     unsupported !! 
         </audio>
     </div>

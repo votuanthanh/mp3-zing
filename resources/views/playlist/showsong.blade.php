@@ -32,16 +32,16 @@
 								@foreach ($songs as $song)
 								<tr>
 									<td>{{ $song->id }}</td>
-									<td><img class="img-thumbnail" src="{{ asset('/img' . $song->{'cover_image'}) }}"></td>
+									<td><img class="img-thumbnail" src="{{ asset('/img' .'/'. $song->{'cover_image'}) }}"></td>
 									<td>{{ $song->name }}</td>
 									<td>{{ $song->composer->name }}</td>
 									<td>{{ $song->year }}</td>
 									<td>{{ $song->file_name }}</td>
 									<td>{{ $song->description }}</td>
 									<td class="d-flex">
-										<a href="#" class="btn btn-primary mr-1">View</a>
-										<a href="#" class="btn btn-success mr-1">Edit</a>
-										<a href="#" class="btn btn-danger mr-1">Delete</a>
+										<a href="{{ route('song.listen', ['id' => $song->id])}}" class="btn btn-primary mr-1">View</a>
+										<a href="{{ route('song.edit', ['id' => $song->id])}}" class="btn btn-success mr-1">Edit</a>
+										<a href="{{ route('song.delete', ['id' => $song->id])}}" class="btn btn-danger mr-1">Delete</a>
 									</td>
 								</tr>
 								@endforeach

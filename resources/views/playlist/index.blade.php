@@ -7,6 +7,9 @@
                 <strong>{{ session('message') }}</strong>
             </div>>
         @endif
+        @if(Session::has('message'))
+            <div class="alert alert-success"> {{ Session::get('message') }}</div>
+        @endif
 		<div class="d-flex justify-content-center">
 			<div class="col-md-12">
 				<h1>Playlist</h1>
@@ -30,9 +33,9 @@
 									<td>{{ $playlist->id }}</td>
 									<td>{{ $playlist->name }}</td>
 									<td class="d-flex">
-										<a href="#" class="btn btn-primary mr-1">View</a>
-										<a href="#" class="btn btn-success mr-1">Edit</a>
-										<a href="#" class="btn btn-danger mr-1">Delete</a>
+										<a href="{{ route('playlist.showSongPlaylist', ['id' => $playlist->id]) }}" class="btn btn-primary mr-1">View</a>
+										<a href="{{ route('playlist.edit',  ['id' => $playlist->id]) }}" class="btn btn-success mr-1">Edit</a>
+										<a href="{{ route('playlist.delete', ['id' => $playlist->id]) }}" class="btn btn-danger mr-1">Delete</a>
 									</td>
 								</tr>
 								@endforeach
