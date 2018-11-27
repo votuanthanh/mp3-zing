@@ -22,14 +22,8 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src ="js/css3-mediaqueries.js"></script>
-    <script type="text/javascript" href ="js/Search.js"></script>
-    <link rel="stylesheet" href="css/style_menu.css" type="text/css">
-    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="{{ asset('css/style_menu.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/slider.css') }}" type="text/css">
 
   </head>
   <body data-vide-bg="video/snow" >
@@ -235,19 +229,19 @@
                           <!-- Wrapper for slides -->
                           <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                              <img src="img/pic1.jpg" alt="city" >
+                              <img src="{{ asset('img/pic1.jpg') }}" alt="city" >
                             </div>
                             <div class="item">
-                              <img src="img/pic2.jpg" alt="city2" >
+                              <img src="{{ asset('img/pic2.jpg') }}" alt="city2" >
                             </div>
                             <div class="item">
-                              <img src="img/pic3.jpg" alt="city3">
+                              <img src="{{ asset('img/pic3.jpg') }}" alt="city3">
                             </div>
                             <div class="item">
-                              <img src="img/pic4.jpg" alt="city4"  >
+                              <img src="{{ asset('img/pic4.jpg') }}" alt="city4"  >
                             </div>
                             <div class="item">
-                              <img src="img/pic5.jpg" alt="city5" >
+                              <img src="{{ asset('img/pic5.jpg') }}" alt="city5" >
                             </div>
                             ...
                           </div>
@@ -294,21 +288,21 @@
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <a href="">
-                                <img src="img/al1.jpg" alt="album1">
+                                <img src="{{ asset('img/al1.jpg') }}" alt="album1">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <a href="">
-                                <img src="img/al2.jpg" alt="album2">
+                                <img src="{{ asset('img/al2.jpg') }}" alt="album2">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <a href="">
-                                <img src="img/al3.jpg" alt="album3">
+                                <img src="{{ asset('img/al3.jpg') }}" alt="album3">
                             </a>
                         </div>
                     </div>
@@ -320,22 +314,22 @@
                     <hr>
                     <div class="row" style="margin-bottom: 7px;">
                         <a href="">
-                            <img src="img/cd1.jpg" alt="" width="90%;" >
+                            <img src="{{ asset('img/cd1.jpg') }}" alt="" width="90%;" >
                         </a>
                     </div>
                     <div class="row" style="margin-bottom: 7px;">
                         <a href="">
-                            <img src="img/cd2.jpg" alt="" width="90%">
+                            <img src="{{ asset('img/cd2.jpg') }}" alt="" width="90%">
                         </a>
                     </div>
                     <div class="row" style="margin-bottom: 7px;">
                         <a href="">
-                            <img src="img/cd3.jpg" alt="" width="90%">
+                            <img src="{{ asset('img/cd3.jpg') }}" alt="" width="90%">
                         </a>
                     </div>
                     <div class="row" style="margin-bottom: 7px;">
                         <a href="">
-                            <img src="img/cd4.jpg" alt="" width="90%">
+                            <img src="{{ asset('img/cd4.jpg') }}" alt="" width="90%">
                         </a>
                     </div>
                 </div>
@@ -348,21 +342,21 @@
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <a href="">
-                                <img src="img/mv1.jpg" alt="mv1">
+                                <img src="{{ asset('img/mv1.jpg') }}" alt="mv1">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <a href="">
-                                <img src="img/mv2.jpg" alt="mv2">
+                                <img src="{{ asset('img/mv2.jpg') }}" alt="mv2">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <a href="">
-                                <img src="img/mv3.jpg" alt="mv3">
+                                <img src="{{ asset('img/mv3.jpg') }}" alt="mv3">
                             </a>
                         </div>
                     </div>
@@ -371,21 +365,21 @@
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <a href="">
-                                <img src="img/mv4.jpg" alt="mv4">
+                                <img src="{{ asset('img/mv4.jpg') }}" alt="mv4">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <a href="">
-                                <img src="img/mv5.jpg" alt="mv5">
+                                <img src="{{ asset('img/mv5.jpg') }}" alt="mv5">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <a href="">
-                                <img src="img/mv6.jpg" alt="mv6">
+                                <img src="{{ asset('img/mv6.jpg') }}" alt="mv6">
                             </a>
                         </div>
                     </div>
@@ -413,7 +407,7 @@
     </div>
     <div id="player">
         <audio controls autoplay hidden>
-         <source src="{{URL::asset('uploads/music.mp3')}}" type="audio/mpeg">
+         <source src="{{URL::asset('mp3/5bfce6c34dbef.mp3')}}" type="audio/mpeg">
                     unsupported !! 
         </audio>
     </div>
