@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Create a song</div>
+                <div class="card-header">Edit a song</div>
                 
                 @if(Session::has('message'))
                     <div class="alert alert-success"> {{ Session::get('message') }}</div>
@@ -21,7 +21,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="POST" enctype="multipart/form-data" action="{{ route('song.store') }}">
+                    <form method="POST" enctype="multipart/form-data" action="{{ route('song.update', $id) }}">
                        @csrf
 
                         <div class="form-group row">

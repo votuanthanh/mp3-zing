@@ -48,7 +48,6 @@
                 </div>
                 <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ URL::to('home') }}">Trang chủ</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bài hát<b class="caret"></b></a>
                             <ul class="dropdown-menu multi-column columns-2">
@@ -151,11 +150,13 @@
                                 <ul class="dropdown-menu multi-column columns-1">
                                     <li>
                                         <ul class="multi-column-dropdown col-sm-8">
-                                            <li><a href="{{ URL::to('song/create') }}">Bài hát</a></li>
+                                            <li><a href="{{ URL::to('song/index') }}">Bài hát</a></li>
                                             <li class="divider"></li>
-                                            <li><a href="{{ URL::to('singer/create') }}">Ca sĩ</a></li>
+                                            <li><a href="{{ URL::to('singer/index') }}">Ca sĩ</a></li>
                                             <li class="divider"></li>
-                                            <li><a href="{{ URL::to('composer/create') }}">Nhạc sĩ</a></li>
+                                            <li><a href="{{ URL::to('composer/index') }}">Nhạc sĩ</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="{{ URL::to('playlist/index') }}">Playlist</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -412,7 +413,7 @@
     </div>
     <div id="player">
         <audio controls autoplay hidden>
-         <source src="{{URL::asset('uploads/music.mp3')}}" type="audio/mpeg">
+         <source src="{{URL::asset('mp3/5bfce6c34dbef.mp3')}}" type="audio/mpeg">
                     unsupported !! 
         </audio>
     </div>

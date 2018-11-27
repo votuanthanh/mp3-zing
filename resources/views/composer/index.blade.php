@@ -7,17 +7,14 @@
                 <strong>{{ session('message') }}</strong>
             </div>>
         @endif
-        @if(Session::has('message'))
-            <div class="alert alert-success"> {{ Session::get('message') }}</div>
-        @endif
 		<div class="d-flex justify-content-center">
 			<div class="col-md-12">
-				<h1>Playlist</h1>
+				<h1>List Composer</h1>
 				<div class="card">
 					<div class="card-header"></div>
 					<div class="card-body">
 						<div class="d-flex flex-row-reverse">
-							<a href="{{ route('playlist.create') }}" class="btn btn-primary py-1 my-2">Create PLaylist</a>
+							<a href="{{ route('composer.create') }}" class="btn btn-primary py-1 my-2">Create Composer</a>
 						</div>
 						<table class="table">
 							<thead class="thead-dark">
@@ -28,14 +25,14 @@
 								</tr>
 							</thead>
 							<tbody>
-								 @foreach ($playlists as $playlist)
+								 @foreach ($composers as $composer)
 								<tr>
-									<td>{{ $playlist->id }}</td>
-									<td>{{ $playlist->name }}</td>
+									<td>{{ $composer->id }}</td>
+									<td>{{ $composer->name }}</td>
 									<td class="d-flex">
-										<a href="{{ route('playlist.showSongPlaylist', ['id' => $playlist->id]) }}" class="btn btn-primary mr-1">View</a>
-										<a href="{{ route('playlist.edit',  ['id' => $playlist->id]) }}" class="btn btn-success mr-1">Edit</a>
-										<a href="{{ route('playlist.delete', ['id' => $playlist->id]) }}" class="btn btn-danger mr-1">Delete</a>
+										<a href="#" class="btn btn-primary mr-1">View</a>
+										<a href="#" class="btn btn-success mr-1">Edit</a>
+										<a href="#" class="btn btn-danger mr-1">Delete</a>
 									</td>
 								</tr>
 								@endforeach

@@ -17,6 +17,20 @@ class PlaylistController extends Controller
         return view('playlist.index',['playlists' => $playlists]);
     }
 
+    public function showSongPlayList($id)
+    {
+        $songs = Playlist::find($id)->songs()->get();
+        return view('playlist.showsong',['songs' => $songs]);
+    }
+
+
+    public function delete($id)
+    {
+        $playlists = Playlist::find($id);
+        $playlists->delete($playlists->id);
+        return redirect()->back();
+    }
+
     public function create()
     {
 
@@ -47,6 +61,26 @@ class PlaylistController extends Controller
 
 
         return redirect()->route('playlist.create')->with('message', 'Done');
+    }
+
+    public function edit($id)
+    {
+        $songs = Song::all();
+        $playlist = Playlist::find($id);
+        return view('playlist.edit',compact('playlist','id'), ['songs' => $songs]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $reqs = $request->all();
+        $songIds = $reqs['song_id'];
+        $playlists = Playlist::find($id);
+        $playlists->name = $request->name;
+        $playlists->user_id = Auth::user()->id;
+        $playlists->save();
+        $playlists->songs()->attach($songIds);
+
+        return redirect()->route('playlist.index')->with('message', 'Done');
     }
 
 

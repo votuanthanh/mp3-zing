@@ -4,18 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Singer;
+use App\Http\Requests\CreateSingerRequest;
 
 class SingerController extends Controller
 {
+    
+    public function index() {
+        $singers = Singer::all();
+        return view('singer.index',['singers' => $singers]);
+
+    }
+
     public function create()
     {
-
         return view('singer.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateSingerRequest $request)
     {
-		 try {
+        try {
             $singer = new Singer();
             $singer->name = $request->name;
             // $book->title = $request->title;
@@ -24,9 +31,7 @@ class SingerController extends Controller
             // $book->number_of_page = $request->number_of_page;
             // $book->author_id = $request->author_id;
             $singer->save();
-
         } catch (Exception $e) {
-
         }
 
         return redirect()->route('singer.create')->with('message', 'Done');
