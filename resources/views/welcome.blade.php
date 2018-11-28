@@ -22,6 +22,12 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src ="js/css3-mediaqueries.js"></script>
+    <script type="text/javascript" href ="js/Search.js"></script>
     <link rel="stylesheet" href="{{ asset('css/style_menu.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/slider.css') }}" type="text/css">
 
